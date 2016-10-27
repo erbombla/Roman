@@ -8,14 +8,24 @@
     <title>Roman Numeral Translator</title>
   </head>
   <body>
-    <div class="jumbotron">
-      <h1>ROMAN NUMERAL TRANSLATOR</h1>
-    </div>
     <div class="container">
+      <div class="jumbotron">
+        <h1>ROMAN NUMERAL TRANSLATOR</h1>
+      </div>
+    <!--Input-->
       <form>
+        <label for="number">Enter a number up to 3,999</label>
+          <input id = "input" class="form-control" type="text" autocomplete="off">
+          <br>
+          <button type="submit" name="button" class="form -control btn btn-primary">Convert</button>
 
-        
       </form>
+      <br>
+      <!--Result-->
+      <div class="panel panel-primary">
+        <div class="panel-heading">Answer:</div>
+        <div id="output" class="panel-body"></div>
+      </div>
     </div>
   </body>
 </html>

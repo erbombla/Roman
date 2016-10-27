@@ -1,0 +1,26 @@
+//business logic
+function romanize(num) {
+  if (!+num)
+      return false;
+
+  if (+num >= 3999)
+    return alert("You must input some numbers otherwise you are a big jackass!");
+
+  var digits = String(+num).split(""),
+      key = ["","C","CC","CCC","CD","D","DC","DCC","DCCC","CM",
+             "","X","XX","XXX","XL","L","LX","LXX","LXXX","XC",
+             "","I","II","III","IV","V","VI","VII","VIII","IX"],
+      roman = "",
+      i = 3;
+  while (i--)
+      roman = (key[+digits.pop() + (i * 10)] || "") + roman;
+  return Array(+digits.join("") + 1).join("M") + roman;
+  }
+
+//user interface
+$(document).ready(function(){
+  $("form").submit(function(event) {
+    event.preventDefault();
+    $("#output").append("<p>" + romanize($("#input").val())+ "</p>");
+    });
+});
